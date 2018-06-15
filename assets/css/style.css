@@ -592,6 +592,11 @@ svg {
         font-weight: 600;
         margin: auto;
     }
+
+    .box-portfolio {
+        width: 80%;
+    }
+
 }
 
 .about .img img {
@@ -633,12 +638,11 @@ svg {
     box-shadow: 0px 1px 57px 0px rgba(0, 0, 0, 0.25);
 }
 
-.col-lg-4:not(.active) .box-portfolio {
+/* .col-lg-4:not(.active) .box-portfolio {
     pointer-events: none;
     box-shadow: 0px 1px 57px 0px rgba(0, 0, 0, 0.1);
     opacity: 0.5;
-
-}
+} */
 
 .box-portfolio h3 {
     font-size: 36px;
@@ -647,26 +651,29 @@ svg {
     letter-spacing: 1.2px;
 }
 
-@media (max-width: 992px) {
-    .col-lg-4:not(.active) .box-portfolio {
-        display: none;
-    }
 
-    .col-lg-4.active .box-portfolio {
-        width: 150%;
+@media (max-width: 1100px) {
+
+    /* .col-lg-4:not(.active) .box-portfolio {
+        display: none;
+    } */
+    .box-portfolio {
+        width: 90% !important;
         transition: 0.5s;
+        margin: auto;
     }
 }
 
-@media (max-width: 1274px) {
-    .col-lg-4:not(.active) .box-portfolio {
+@media (max-width: 1450px) {
+    /* .col-lg-4:not(.active) .box-portfolio {
         display: none;
-    }
+    } */
 
-    .col-lg-4.active .box-portfolio {
-        width: 150%;
+    /* .box-portfolio {
+        width: 100%;
         transition: 0.5s;
-    }
+        margin: auto;
+    } */
 }
 
 /* .portfolio .col-lg-4:nth-child(1) {
@@ -692,6 +699,10 @@ svg {
     object-position: top;
 }
 
+.swiper-container {
+    cursor: default !important;
+}
+
 .box-portfolio .title a {
     font-size: 36px;
     color: var(--primary-color);
@@ -709,15 +720,20 @@ svg {
     border-radius: 50px;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-family: swiper-icons;
-    font-size: 24px !important;
-    text-transform: none !important;
-    letter-spacing: 0;
-    font-variant: initial;
-    line-height: 1;
-    color: var(--primary-color);
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/chevron-right.svg) !important;
+    right: 18px !important;
+    left: auto;
+    background-size: 30px !important;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: url(..//img/chevron-left.svg) !important;
+    left: 18px !important;
+    right: auto;
+    background-size: 30px !important;
 }
 
 .box-portfolio p {

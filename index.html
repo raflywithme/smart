@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="assets/vendor/aos/aos.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css'>
 </head>
 
 <body>
@@ -129,16 +130,15 @@
             </div>
         </section> -->
 
-
         <section id="portfolio" class="portfolio">
-            <div class="head">
+            <div class="head mb-5">
                 <h4>Portfolio</h4>
             </div>
-            <div class="swiper">
-                <div class="row d-flex justify-content-center align-items-center py-5">
-                    <div class="swiper-wrapper justify-content-center">
-                        <div class="col-lg-4 mt-5 px-5" data-aos="fade-up" data-aos-delay="600">
-                            <div class="box-portfolio swiper-slide">
+            <div class="row">
+                <div class="swiper-container d-flex justify-content-center align-items-center py-5 ">
+                    <div class="swiper-wrapper d-flex align-items-center">
+                        <div class="col-lg-4 mt-5 px-5 swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                            <div class="box-portfolio">
                                 <div class="info d-flex py-3" style="margin-left: 46px;">
                                     <img src="assets/img/avatar.jpg" class="rounded-circle" style="width: 60px;"
                                         alt="Avatar" />
@@ -147,45 +147,44 @@
                                 <div class="img-portfolio">
                                     <img src="assets/img/robt.jpg" class="img-fluid" alt="">
                                 </div>
-                                <h3 class="title mt-5"><a href="#">Robot</a></h3>
+                                <h3 class="title mt-5"><a href="#">Robot 1</a></h3>
                                 <a class="portfolio-btn" href="#">Lihat Profil</a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 mt-5 px-5 active d-flex justify-content-center align-items-center"
-                            data-aos="fade-up" data-aos-delay="600">
-                            <div class="box-portfolio swiper-slide active">
+                        <div class="col-lg-4 mt-5 px-5 swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                            <div class="box-portfolio">
                                 <div class=" info d-flex py-3" style="margin-left: 46px;">
                                     <img src="assets/img/avatar.jpg" class="rounded-circle" style="width: 60px;"
                                         alt="Avatar" />
-                                    <h3 class="align-items-center justify-content-center d-flex ms-2">Tux</h3>
+                                    <h3 class="align-items-center justify-content-center d-flex ms-2">Tuxx</h3>
                                 </div>
                                 <div class="img-portfolio">
                                     <img src="assets/img/robt.jpg" class="img-fluid" alt="">
                                 </div>
-                                <h3 class="title mt-5"><a href="#">Robot</a></h3>
+                                <h3 class="title mt-5"><a href="#">Robot 2</a></h3>
                                 <a class="portfolio-btn" href="#">Lihat Profil</a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 mt-5 px-5" data-aos="fade-up" data-aos-delay="600">
-                            <div class="box-portfolio swiper-slide">
+                        <div class="col-lg-4 mt-5 px-5 swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                            <div class="box-portfolio">
                                 <div class="info d-flex py-3" style="margin-left: 46px;">
                                     <img src="assets/img/avatar.jpg" class="rounded-circle" style="width: 60px;"
                                         alt="Avatar" />
-                                    <h3 class="align-items-center justify-content-center d-flex ms-2">Tux</h3>
+                                    <h3 class="align-items-center justify-content-center d-flex ms-2">Tuxxx</h3>
                                 </div>
                                 <div class="img-portfolio">
                                     <img src="assets/img/robt.jpg" class="img-fluid" alt="">
                                 </div>
-                                <h3 class="title mt-5"><a href="#">Robot</a></h3>
+                                <h3 class="title mt-5"><a href="#">Robot 3</a></h3>
                                 <a class="portfolio-btn" href="#">Lihat Profil</a>
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
@@ -275,21 +274,54 @@
             });
         };
 
-        const swiper = new Swiper('.swiper', {
-            slidesPerView: 1, // Hanya satu slide yang terlihat
-            centeredSlides: true, // Slide yang terlihat akan diatur di tengah
-            loop: true, // Mengaktifkan loop jika diperlukan
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 100,
+            initialSlide: 1,
+            //truewrapper adoptsheight of active slide
+            autoHeight: false,
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            autoplayStopOnLast: true, // loop false also
+
+            // Navigation arrows
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+            // And if we need scrollbar
+            //scrollbar: '.swiper-scrollbar',
+            // "slide", "fade", "cube", "coverflow" or "flip"
+            effect: 'slide',
+            // Distance between slides in px.
+            spaceBetween: 120,
+            //
+            slidesPerView: 2,
+            //
+            centeredSlides: true,
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                },
+
+                992: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                }
             },
+            //
+            slidesOffsetBefore: 0,
+            //
+            grabCursor: true,
         });
-
-
     });
 </script>
 <script src="assets/vendor/aos/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </html>
